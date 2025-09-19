@@ -51,10 +51,11 @@ function step()
       return false
     end
   end
-  for _ = 1,stairHeight + 1 do
-    turtle.turnLeft()
-    digFrontAndBack()
+  turtle.turnLeft()
+  digFrontAndBack()
+  for _ = 1,stairHeight do
     turtle.down()
+    digFrontAndBack()
   end
   if math.fmod(stairHeight, 2) == 0 then
     turtle.turnLeft()
