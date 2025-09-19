@@ -4,19 +4,19 @@ if not turtle then
 end
 
 local tArgs = { ... }
-if #tArgs ~= 1 then
+if #tArgs ~= 2 then
   local programName = arg[0] or fs.getName(shell.getRunningProgram())
   print('Usage: ' .. programName .. ' <stair-height> <depth>')
 end
 
 local stairHeight = tonumber(tArgs[1])
-if stairHeight < 1 or stairHeight == nil then
+if  stairHeight == nil or stairHeight < 1 then
   print("StairCase depth must be positive")
   return
 end
 
 local depth = tonumber(tArgs[2])
-if depth < 1 then
+if depth == nil or depth < 1 then
   print("StairCase depth must be positive")
   return
 end
@@ -30,12 +30,12 @@ end
 
 function tryDigForward()
   turtle.dig()
-  return not turtle.forward()
+  return turtle.forward()
 end
 
 function tryDigUp()
   turtle.digUp()
-  return not turtle.up()
+  return turtle.up()
 end
 
 function step()
