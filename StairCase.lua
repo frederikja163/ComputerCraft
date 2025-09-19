@@ -46,7 +46,7 @@ function step()
   if turtle.detectDown() then
     return false
   end
-  for _ = 1,stairHeight do
+  for _ = 1,stairHeight-1 do
     if not tryDigUp() then
       return false
     end
@@ -62,6 +62,7 @@ function step()
   else
     turtle.turnRight()
   end
+  return true
 end
 
 for i = 1, depth do
