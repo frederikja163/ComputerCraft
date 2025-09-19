@@ -30,12 +30,12 @@ end
 
 function tryDigForward()
   turtle.dig()
-  return turtle.forward()
+  return not turtle.forward()
 end
 
 function tryDigUp()
   turtle.digUp()
-  return turtle.up()
+  return not turtle.up()
 end
 
 function step()
